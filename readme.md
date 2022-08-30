@@ -1,6 +1,6 @@
 
-使用不同window(soft tissue,lung,bone)組成三個通道的dicom製作2.5D模型，預測liver segmentation.
-
+### 使用不同window(soft tissue,lung,bone)組成三個通道的dicom製作2.5D模型，預測liver segmentation.
+![image](https://github.com/das61005/liver_segmentation/blob/main/img/liver1.png)
 ## 訓練預處理:
 
 ### resample_niigz.py
