@@ -2,6 +2,17 @@
 ### 使用不同window(soft tissue,lung,bone)組成三個通道的dicom製作2.5D模型，預測liver segmentation.
 ![image](https://github.com/das61005/liver_segmentation/blob/main/img/liver1.png)
 ![image](https://github.com/das61005/liver_segmentation/blob/main/img/hist.png)
+
+這裡是input data下載連結
+
+https://mega.nz/folder/oIYAiJgB#qobdWpXVchcIs4de0fFDBQ
+
+https://mega.nz/folder/dNQjEDra#b7QSEEZ4BwlZhYb8INP4Rg
+
+權重檔下載連結
+
+https://mega.nz/folder/VAowRQwT#q927BA7OP1N8e2j16tDPcA
+
 ## 訓練預處理:
 
 ### resample_niigz.py
@@ -90,5 +101,5 @@ output:
 
 補充:78行換成input data的路徑(預設為new_nii.gz)
 
-    python 4.5_predict_liver.py -w weight_liver_new/ -d predict_mask/
+    python 4.5_predict_liver.py -w weight_liver_25_726_200/ -d predict_mask/
 
