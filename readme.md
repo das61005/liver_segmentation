@@ -13,6 +13,13 @@ https://mega.nz/folder/dNQjEDra#b7QSEEZ4BwlZhYb8INP4Rg
 
 https://mega.nz/folder/VAowRQwT#q927BA7OP1N8e2j16tDPcA
 
+    環境需求:
+    numpy==1.22.3
+    nibabel==3.2.2
+    scipy==1.4.1
+    scikit-image==0.18.3
+    scikit-learn==1.0.1
+
 ## 訓練預處理:
 
 ### resample_niigz.py
