@@ -64,7 +64,7 @@ def save_as_plot(dicom,mask,predictions,output_path):
     predictions = np.squeeze(predictions) # 刪除長度為1的軸
     predictions_mask = np.where(predictions>0.5, 1, 0)
     FOV=get_FOV(predictions)
-    Estimated_lung = np.where((FOV - predictions_mask)>0, 1, 0)##
+    Estimated_mask = np.where((FOV - predictions_mask)>0, 1, 0)##
 
 
     shp = predictions_mask.shape
@@ -73,29 +73,23 @@ def save_as_plot(dicom,mask,predictions,output_path):
     dicom_with_mask=np.zeros((shp[0], shp[1] ,shp[2]), dtype=np.float32)
 
     for i,per_dicom in enumerate(dicom):
-        dicom_with_mask[i]=np.where(Estimated_lung[i]==1,255,per_dicom)##
+        dicom_with_mask[i]=np.where(Estimated_mask[i]==1,255,per_dicom)##
     #若輸入格式改了這個也要改
 
 
     print('save_plot')
     for n in range(dicom_with_mask.shape[0]):
         
-        plt.subplot(231)
-        plt.title("mask")
+        plt.subplot(221)
+        plt.title("original_mask")
         plt.imshow(mask[n])
-        plt.subplot(232)
-        plt.title("Estimated_lung")
-        plt.imshow(Estimated_lung[n])
-        plt.subplot(233)
-        plt.title("predict_mask")
-        plt.imshow(predictions_mask[n])
-        plt.subplot(234)
-        plt.title("FOV")
-        plt.imshow(FOV[n])
-        plt.subplot(235)
+        plt.subplot(222)
+        plt.title("Estimated_mask")
+        plt.imshow(Estimated_mask[n])
+        plt.subplot(223)
         plt.title("predict_with_dicom")
         plt.imshow(dicom_with_mask[n])
-        plt.subplot(236)
+        plt.subplot(224)
         plt.title('dicom')
         plt.imshow(dicom[n])
         
