@@ -114,7 +114,7 @@ def unet(input_size = (256,256,3)):
     #model.compile(optimizer = Adam(lr = 1e-4), loss = dice_coefficient_loss, metrics=[tf.keras.metrics.BinaryIoU(target_class_ids=[0, 1], threshold=0.5)])
     #model.compile(optimizer = Adam(lr = 1e-4), loss = dice_coefficient_loss, metrics=[tf.keras.metrics.MeanIoU(num_classes=2)])
     #model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
-    model.compile(optimizer = Adam(lr = 1e-2 ), loss = 'binary_crossentropy',metrics=[tf.keras.metrics.BinaryIoU(target_class_ids=[0, 1], threshold=0.5)]  )#metrics=[tf.keras.metrics.BinaryIoU(target_class_ids=[0, 1], threshold=0.5)]#metrics = ['accuracy']
+    model.compile(optimizer = Adam(lr = 1e- ), loss = 'binary_crossentropy',metrics=[tf.keras.metrics.BinaryIoU(target_class_ids=[0, 1], threshold=0.5)]  )#metrics=[tf.keras.metrics.BinaryIoU(target_class_ids=[0, 1], threshold=0.5)]#metrics = ['accuracy']
 
     #model.summary()
     
