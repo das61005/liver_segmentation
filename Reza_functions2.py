@@ -128,14 +128,18 @@ def find_path_size(path):
     return ID
     
 def history_plot(history,weight):
-    plt.ylim(0,1)
+
     plt.plot(history.history["loss"],color='r',label='loss')
-    plt.plot(history.history["binary_io_u"],color='b',label='binary_io_u')
     plt.plot(history.history["val_loss"],color='g',label='val_loss')
-    plt.plot(history.history["val_binary_io_u"],color='c',label='val_binary_io_u')
     plt.plot(history.history["lr"],color='y',label='lr')
     plt.legend(loc ='lower right')
-    plt.savefig(weight+"hist.png")
+    plt.savefig(weight+"hist1.png")
+    plt.close()
+
+    plt.plot(history.history["val_binary_io_u"],color='c',label='val_binary_io_u')
+    plt.plot(history.history["binary_io_u"],color='b',label='binary_io_u')
+    plt.legend(loc ='lower right')
+    plt.savefig(weight+"hist2.png")
     plt.close()
 
 
